@@ -6,26 +6,27 @@ import NavBar from './components/navBar';
 import Footer from './components/footer';
 import NotFound from './components/notFound';
 import Interests from './components/interests';
+import Class from './components/class';
+import Projects from './components/projects';
+import StrengthTraining from './components/strengthTraining';
+import Header from './components/header';
 
 function App() {
   return (
-    <div className="text-center">
-      <header className="text-right">
-        <h1>
-          <span className="headerText">Victor.</span>
-        </h1>
-      </header>
-      <main className="container">
-        <NavBar />
-        <Switch>
-          <Route path="/home" component={Interests}></Route>
-          <Route path="/not-found" component={NotFound} />
-          <Redirect from="/" exact to="/home" />
-          <Redirect to="/not-found" />
-        </Switch>
-        <Footer />
-      </main>
-    </div>
+    <main className="container">
+      <Header />
+      <NavBar />
+      <Switch>
+        <Route path="/home" component={Interests}></Route>
+        <Route path="/class" component={Class}></Route>
+        <Route path="/projects" component={Projects}></Route>
+        <Route path="/strengthTraining" component={StrengthTraining}></Route>
+        <Route path="/not-found" component={NotFound} />
+        <Redirect from="/" exact to="/home" />
+        <Redirect to="/not-found" />
+      </Switch>
+      <Footer />
+    </main>
   );
 }
 

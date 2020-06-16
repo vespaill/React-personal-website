@@ -1,13 +1,12 @@
-/**
- * File: style.css
- * 91.461 Assignment: Creating Your First Web Page
- *
- * Victor M Espaillat, UMass Lowell Computer Science
- * victor_espaillat@student.uml.edu
- */
-
 @import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
 
+* {
+    padding: 0;
+}
+
+/**
+ * Headers
+ */
 .headerText {
   margin: 0 0 50px 0;
   padding: 10px 5px 0 20px;
@@ -22,7 +21,7 @@
   transition: background-color 1s, box-shadow 1s;
 }
 
-h1:first-letter {
+.brand:first-letter {
   font-family: 'Courgette';
 }
 
@@ -32,13 +31,57 @@ h1:first-letter {
   background-color: #f0ad4e;
 }
 
+
+/**
+ * Intro
+ */
+.intro {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  padding: 30px 0 30px 0;
+  line-height: 200%;
+}
+
 .intro:first-letter {
   font-size: 200%;
   font-family: 'Liberate Wide Normal';
 }
 
-#interests {
-  display: grid;
-  grid-template: auto / 1fr 1fr;
+
+/**
+ * Navbar
+ */
+.link {
+  color: #6495ed;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: cmu_serif_italic_upright;
+}
+
+.link:hover {
+  color: #f0ad4e;
+  text-decoration: none;
+}
+
+.nav-item {
+  font-size: 32px;
+  padding-right: 1.5em;
+}
+
+.active-link {
+  color: #f0ad4e;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: cmu_serif_italic_upright;
+}
+
+
+/**
+ * Footer
+ */
+footer {
+  padding: 30px;
+  font-size: 16px;
+  border-top: 1px solid gray;
 }
 
