@@ -1,0 +1,44 @@
+/**
+ * File: style.css
+ * 91.461 Assignment: Creating Your First Web Page
+ *
+ * Victor M Espaillat, UMass Lowell Computer Science
+ * victor_espaillat@student.uml.edu
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+
+.headerText {
+  margin: 0 0 50px 0;
+  padding: 10px 5px 0 20px;
+  border-radius: 60px;
+
+  /* Font styles */
+  font-family: 'cmu_typewriter_italic';
+  font-size: 64px;
+  letter-spacing: 5px;
+  font-weight: 400; /* making the text lighter */
+
+  transition: background-color 1s, box-shadow 1s;
+}
+
+h1:first-letter {
+  font-family: 'Courgette';
+}
+
+.headerText:hover {
+  padding: 10px 5px 0 20px;
+  box-shadow: 0 0 25px 50px #f0ad4e;
+  background-color: #f0ad4e;
+}
+
+.intro:first-letter {
+  font-size: 200%;
+  font-family: 'Liberate Wide Normal';
+}
+
+#interests {
+  display: grid;
+  grid-template: auto / 1fr 1fr;
+}
+

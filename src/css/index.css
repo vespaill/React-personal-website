@@ -1,0 +1,16 @@
+#root {
+  margin: 0;
+  /* Box styles */
+  background: #202020;
+  width: 60%;
+  min-width: 500px;
+  max-width: 1500px;
+  margin: 30px auto 30px auto;
+
+  /* Font styles */
+  font-family: 'cmu_serifroman';
+  font-size: 24px;
+  color: white;
+  letter-spacing: 2px;
+  font-family: 'cmu_serifroman';
+}
