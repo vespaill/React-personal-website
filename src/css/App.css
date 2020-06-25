@@ -1,87 +1,114 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
 
 * {
-    padding: 0;
+  margin: 0;
 }
 
-/**
- * Headers
- */
-.headerText {
-  margin: 0 0 50px 0;
-  padding: 10px 5px 0 20px;
-  border-radius: 60px;
+/* --------------------------------- Colors --------------------------------- */
 
-  /* Font styles */
+.bg-nero {
+  background-color: var(--nero);
+  color: white;
+}
+
+.bg-bone {
+  background-color: var(--bone);
+}
+
+.bg-dissipate {
+  background-color: var(--dissipate);
+  color: white;
+}
+
+.color-deepSkyBlue {
+  color: var(--deep-sky-blue);
+}
+
+/* -------------------------------- Borders --------------------------------- */
+.border-x {
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+}
+
+.border-bottom-gray {
+  border-bottom: 1px solid gray;
+}
+
+.rounded-xl {
+  border-radius: 1rem;
+}
+
+.underline {
+  border-bottom: 2px solid gray;
+  display: inline-block;
+  line-height: 0.7;
+}
+
+/* --------------------------------- Header --------------------------------- */
+.headerText {
   font-family: 'cmu_typewriter_italic';
   font-size: 64px;
   letter-spacing: 5px;
-  font-weight: 400; /* making the text lighter */
-
-  transition: background-color 1s, box-shadow 1s;
 }
 
-.brand:first-letter {
+.headerFirstLetter {
   font-family: 'Courgette';
 }
 
-.headerText:hover {
-  padding: 10px 5px 0 20px;
-  box-shadow: 0 0 25px 50px #f0ad4e;
-  background-color: #f0ad4e;
+.custom-h2 {
+  font-weight: bold;
+  font-size: 32px;
 }
 
+p {
+  font-weight: bold;
+}
 
-/**
- * Intro
- */
+/* --------------------------------- Intro ---------------------------------- */
 .intro {
-  border-top: 1px solid gray;
-  border-bottom: 1px solid gray;
-  padding: 30px 0 30px 0;
+  /* border-top: 1px solid gray; */
+  padding: 30px 0;
   line-height: 200%;
 }
 
-.intro:first-letter {
+.paragraphFirstLetter::first-letter {
   font-size: 200%;
   font-family: 'Liberate Wide Normal';
 }
 
-
-/**
- * Navbar
- */
+/* --------------------------------- Navbar --------------------------------- */
 .link {
-  color: #6495ed;
+  color: var(--deep-sky-blue);
   font-weight: bold;
   text-decoration: none;
   font-family: cmu_serif_italic_upright;
 }
 
 .link:hover {
-  color: #f0ad4e;
+  color: var(--highlight-color);
   text-decoration: none;
 }
 
 .nav-item {
   font-size: 32px;
   padding-right: 1.5em;
+  line-height: 2em;
 }
 
 .active-link {
-  color: #f0ad4e;
+  color: var(--highlight-color);
   font-weight: bold;
   text-decoration: none;
   font-family: cmu_serif_italic_upright;
 }
 
-
-/**
- * Footer
- */
+/* --------------------------------- Footer --------------------------------- */
 footer {
   padding: 30px;
   font-size: 16px;
   border-top: 1px solid gray;
 }
 
+.w-90 {
+  width: 90%;
+}

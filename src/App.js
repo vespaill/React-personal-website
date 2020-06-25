@@ -1,32 +1,25 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import NavBar from './components/navBar';
+import AboutMe from './components/aboutme';
+import NotFound from './components/notFound';
 import './css/font_styles.css';
 import './css/App.css';
-import NavBar from './components/navBar';
-import Footer from './components/footer';
-import NotFound from './components/notFound';
-import Interests from './components/interests';
-import Class from './components/class';
-import Projects from './components/projects';
-import StrengthTraining from './components/strengthTraining';
-import Header from './components/header';
 
 function App() {
   return (
-    <main className="container">
-      <Header />
+    <React.Fragment>
       <NavBar />
-      <Switch>
-        <Route path="/home" component={Interests}></Route>
-        <Route path="/class" component={Class}></Route>
-        <Route path="/projects" component={Projects}></Route>
-        <Route path="/strengthTraining" component={StrengthTraining}></Route>
-        <Route path="/not-found" component={NotFound} />
-        <Redirect from="/" exact to="/home" />
-        <Redirect to="/not-found" />
-      </Switch>
-      <Footer />
-    </main>
+      <main className="container">
+        <Switch>
+          <Route path="/aboutme" component={AboutMe}></Route>
+          <Route path="/not-found" component={NotFound} />
+          <Redirect from="/" exact to="/aboutme" />
+          <Redirect to="/not-found" />
+        </Switch>
+        {/* <Footer /> */}
+      </main>
+    </React.Fragment>
   );
 }
 
