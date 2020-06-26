@@ -8,19 +8,23 @@ const LinkCard = props => {
     <Card>
       <Card.Img variant="top" src={item.imgSrc} />
       <Card.Body className="bg-nero">
-
         <ConditionalWrapper
           key={item.index}
           condition={item.href}
           wrapper={children => (
-            <a className="link" target="#blank" href={item.href}>
+            <a
+              className="link"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={item.href}
+            >
               {children}
             </a>
           )}
         >
-          <Card.Text className='text-center' >{item.title}</Card.Text>
+          <Card.Text className="text-center">{item.title}</Card.Text>
         </ConditionalWrapper>
-        <Card.Text className='text-center'>
+        <Card.Text className="text-center">
           {item.tags.map(tag => (
             <React.Fragment>
               <Badge variant="warning">{tag}</Badge>&nbsp;
