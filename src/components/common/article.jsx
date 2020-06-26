@@ -4,8 +4,8 @@ const Article = props => {
   const { heading, paragraph } = props;
   return (
     <article>
-      <h2 className="paragraphFirstLetter underline mb-4">{heading}</h2>
-      <p className="paragraphFirstLetter">{paragraph}</p>
+      <h2 className="custom-h2 paragraphFirstLetter underline mb-4">{heading}</h2>
+      <p className="bold paragraphFirstLetter">{paragraph}</p>
     </article>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import InfoCard from './common/cards/infoCard';
+import InfoCard from './cards/infoCard';
 import Article from './common/article';
 
 const AboutMe = () => {
