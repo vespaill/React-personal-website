@@ -43,25 +43,25 @@ const Projects = () => {
       title: 'Vidly',
       href: 'https://vidly-react-01251996.herokuapp.com/movies',
       imgSrc: `${commonPath}/vidly_176x99.png`,
-      tags: ['React', 'Bootstrap', 'MongoDB', 'API']
+      tags: ['React', 'Bootstrap', 'MongoDB', 'API', 'tutorial']
     },
     {
       title: 'Forkify',
       href: 'https://vespaill.github.io/Forkify/dist/index.html',
       imgSrc: `${commonPath}/forkify_176x99.png`,
-      tags: ['ES6', 'MVC', 'Webpack', 'Babel', 'API', 'DOM']
+      tags: ['ES6', 'MVC', 'Webpack', 'Babel', 'API', 'DOM', 'tutorial']
     },
     {
       title: 'Budgety',
       href: 'https://vespaill.github.io/Budgety/',
       imgSrc: `${commonPath}/budgety_176x99.png`,
-      tags: ['ES5', 'jQuery', 'DOM']
+      tags: ['ES5', 'jQuery', 'DOM', 'tutorial']
     },
     {
       title: 'Pig Dice',
       href: 'https://vespaill.github.io/pig-dice-game/index.html',
       imgSrc: `${commonPath}/pig-dice_176x99.png`,
-      tags: ['ES5', 'jQuery', 'DOM']
+      tags: ['ES5', 'jQuery', 'DOM', 'tutorial']
     }
   ];
 
