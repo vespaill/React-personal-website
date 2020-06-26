@@ -35,7 +35,7 @@
 }
 
 .rounded-xl {
-  border-radius: 1rem;
+  border-radius: 1em;
 }
 
 .underline {
@@ -49,18 +49,19 @@
   font-family: 'cmu_typewriter_italic';
   font-size: 64px;
   letter-spacing: 5px;
+  cursor: default;
 }
 
-.headerFirstLetter {
+.headerFirstLetter::first-letter {
   font-family: 'Courgette';
 }
 
-.custom-h2 {
+article > h2 {
   font-weight: bold;
   font-size: 32px;
 }
 
-p {
+article > p {
   font-weight: bold;
 }
 
@@ -102,13 +103,11 @@ p {
   font-family: cmu_serif_italic_upright;
 }
 
-/* --------------------------------- Footer --------------------------------- */
-footer {
-  padding: 30px;
-  font-size: 16px;
-  border-top: 1px solid gray;
-}
+/* .no-wrap {
+  white-space: nowrap;
+  overflow: hidden;
+} */
 
-.w-90 {
-  width: 90%;
+.tiny {
+  font-size: 1rem;
 }

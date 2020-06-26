@@ -1,4 +1,6 @@
-const ConditionalWrapper = ({ condition, wrapper, children }) =>
-  condition ? wrapper(children) : children;
+const ConditionalWrapper = props => {
+  const { condition, wrapper, children } = props;
+  return condition ? wrapper(children) : children;
+};
 
 export default ConditionalWrapper;

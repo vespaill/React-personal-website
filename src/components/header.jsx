@@ -2,14 +2,22 @@ import React from 'react';
 
 const Header = props => {
   return (
-    <div className="bg-nero text-left pt-4 pb-3">
+    <div className="bg-nero pt-4 pb-3">
       <h1 className="headerText">
-        {props.children.split(' ').map((word, index) => (
-          <React.Fragment key={index}>
-            <span className="headerFirstLetter">{word[0]}</span>
-            {word.substring(1, word.length) + ' '}
-          </React.Fragment>
-        ))}
+        {props.children.split(' ').map((word, index) => {
+          let spanClasses = 'headerFirstLetter';
+          spanClasses += index > 0 ? ' d-none d-md-inline-block pl-5' : '';
+          return (
+            <span
+              key={index}
+              style={{ display: 'inline-block' }}
+              className={spanClasses}
+            >
+              {word}
+            </span>
+          );
+        })}
+        <span className="d-inline-block d-md-none">.</span>
       </h1>
     </div>
   );
