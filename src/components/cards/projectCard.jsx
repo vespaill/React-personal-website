@@ -42,16 +42,14 @@ class ProjectCard extends Component {
               {item.title}
             </p>
             <Collapse in={this.state.open}>
-              <Card.Text id="collapse-text">{item.desc}</Card.Text>
+              <Card.Text className="text-center">
+                {item.tags.map((tag, index) => (
+                  <React.Fragment key={index}>
+                    <Badge variant="warning">{tag}</Badge>&nbsp;
+                  </React.Fragment>
+                ))}
+              </Card.Text>
             </Collapse>
-
-            <Card.Text className="text-center">
-              {item.tags.map((tag, index) => (
-                <React.Fragment key={index}>
-                  <Badge variant="warning">{tag}</Badge>&nbsp;
-                </React.Fragment>
-              ))}
-            </Card.Text>
           </Card.Body>
         </Card>
       </ConditionalWrapper>

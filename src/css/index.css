@@ -4,19 +4,12 @@
   --portal-orange: #f0ad4e;
   --nero: #202020;
   --dissipate: #294d67;
-  /* --highlight-color: #880000; */
-}
-
-#root {
-  /* width: 60%; */
-  /* min-width: 500px; */
-  /* max-width: 1500px; */
-  font-family: 'cmu_serifroman';
-  font-size: 24px;
-  color: black;
-  letter-spacing: 2px;
 }
 
 body {
   background: var(--bone);
+  font-family: 'cmu_serifroman';
+  font-size: 24px;
+  color: black;
+  letter-spacing: 2px;
 }
