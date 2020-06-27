@@ -84,7 +84,7 @@ class ProjectList extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <>
         <Row className="mt-5">
           <Col md="12" className="text-center">
             <h2 className="bold paragraphFirstLetter underline mb-4">Projects</h2>
@@ -100,7 +100,7 @@ class ProjectList extends Component {
             </Col>
           ))}
         </Row>
-      </React.Fragment>
+      </>
     );
   }
 }

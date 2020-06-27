@@ -9,7 +9,7 @@ import './css/App.css';
 
 function App() {
   return (
-    <React.Fragment>
+    <>
       <NavBar />
       <main className="container">
         <Switch>
@@ -20,7 +20,7 @@ function App() {
           <Redirect to="/not-found" />
         </Switch>
       </main>
-    </React.Fragment>
+    </>
   );
 }
 

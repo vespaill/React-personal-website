@@ -4,7 +4,7 @@ import { Image } from 'react-bootstrap';
 const InfoCard = props => {
   const { image, email, phone } = props;
   return (
-    <React.Fragment>
+    <>
       <Image
         fluid
         className="shadow-lg rounded-xl"
@@ -17,7 +17,7 @@ const InfoCard = props => {
         </a>
         <p className="tiny">{phone}</p>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 

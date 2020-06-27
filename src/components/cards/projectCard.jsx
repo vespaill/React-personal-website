@@ -43,9 +43,10 @@ class ProjectCard extends Component {
             </p>
             <Collapse in={this.state.open}>
               <Card.Text className="text-center">
-                {item.tags.map((tag, index) => (
+                {item.tags.map((tag, index, { length }) => (
                   <React.Fragment key={index}>
-                    <Badge variant="warning">{tag}</Badge>&nbsp;
+                    <Badge variant="warning">{tag}</Badge>
+                    {index !== length - 1 && <>&nbsp;</>}
                   </React.Fragment>
                 ))}
               </Card.Text>
