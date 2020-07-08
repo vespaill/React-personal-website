@@ -56,7 +56,7 @@
 
 /* --------------------------------- Header --------------------------------- */
 .headerText {
-  font-family: 'cmu_typewriter_italic';
+  font-family: 'CMU Typewriter Italic';
   font-size: 64px;
   letter-spacing: 5px;
   cursor: default;
@@ -92,7 +92,7 @@
   color: var(--deep-sky-blue);
   font-weight: bold;
   text-decoration: none;
-  font-family: cmu_serif_italic_upright;
+  font-family: 'CMU Serif Upright';
 }
 
 .no-decoration,
@@ -119,14 +119,14 @@
   color: var(--deep-sky-blue);
   font-weight: bold;
   text-decoration: none;
-  font-family: cmu_serif_italic_upright;
+  font-family: 'CMU Serif Upright';
 }
 
 .active-link {
   color: var(--portal-orange);
   font-weight: bold;
   text-decoration: none;
-  font-family: cmu_serif_italic_upright;
+  font-family: 'CMU Serif Upright';
 }
 
 /* .no-wrap {
@@ -136,4 +136,8 @@
 
 .tiny {
   font-size: 1rem;
+}
+
+.badge {
+  font-family: 'CMU Typewriter Regular';
 }
