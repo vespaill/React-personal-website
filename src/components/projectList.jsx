@@ -9,77 +9,66 @@ class ProjectList extends Component {
       {
         title: 'QuickFit',
         href: 'https://quickfit.herokuapp.com/',
-        imgSrc: `${this.commonPath}/quickfit_176x99.png`,
-        tags: ['REST', 'MVC', 'Pug', 'Bootstrap', 'MongoDB', 'API'],
-        hide: true
+        imgSrc: `${this.commonPath}/quickfit_348x196.png`,
+        tags: ['REST', 'MVC', 'Pug', 'Bootstrap', 'MongoDB', 'API']
       },
       {
         title: 'Ted’s Trip',
         href: 'https://vespaill.github.io/teds-trip/',
-        imgSrc: `${this.commonPath}/ted-cover_176x99.png`,
-        tags: ['Phaser.io', 'ES6', 'Webpack', 'Babel', 'Adobe Photoshop'],
-        hide: true
+        imgSrc: `${this.commonPath}/ted_348x196.png`,
+        tags: ['Phaser.io', 'ES6', 'Webpack', 'Babel', 'Adobe Photoshop']
       },
       {
         title: 'Birthday Bash',
         href: 'https://vespaill.github.io/birthday-bash/',
         imgSrc: `${this.commonPath}/bbash-cover_176x99.png`,
-        tags: ['Phaser.io', 'ES6', 'Webpack', 'Babel', 'Adobe Photoshop'],
-        hide: true
+        tags: ['Phaser.io', 'ES6', 'Webpack', 'Babel', 'Adobe Photoshop']
       },
       {
         title: 'Multiplication table generator',
         href:
           'https://vespaill.github.io/public_html/src/GUI1/assignments/8/index.html',
-        imgSrc: `${this.commonPath}/mult-tab_176x99.png`,
-        tags: ['jQuery', 'Bootstrap', 'DOM'],
-        hide: true
+        imgSrc: `${this.commonPath}/mult-tab_348x196.png`,
+        tags: ['jQuery', 'Bootstrap', 'DOM']
       },
       {
-        title: 'A bit of scramble',
+        title: 'A bit of Scrabble',
         href:
           'https://vespaill.github.io/public_html/src/GUI1/assignments/9/index.html',
-        imgSrc: `${this.commonPath}/scramble_176x99.png`,
-        tags: ['jQuery', 'Bootstrap', 'DOM'],
-        hide: true
+        imgSrc: `${this.commonPath}/scrabble_348x196.png`,
+        tags: ['jQuery', 'Bootstrap', 'DOM']
       },
       {
         title: 'Vidly',
         href: 'https://vidly-react-01251996.herokuapp.com/movies',
-        imgSrc: `${this.commonPath}/vidly_176x99.png`,
-        tags: ['React', 'Bootstrap', 'MongoDB', 'API', 'tutorial'],
-        hide: true
+        imgSrc: `${this.commonPath}/vidly_348x196.png`,
+        tags: ['React', 'Bootstrap', 'MongoDB', 'API', 'tutorial']
+      },
+      {
+        title: 'Natours',
+        href: 'https://vespaill.github.io/Natours/',
+        imgSrc: `${this.commonPath}/natours_348x196.png`,
+        tags: ['CSS3', 'Sass', 'HTML5', 'tutorial']
       },
       {
         title: 'Forkify',
         href: 'https://vespaill.github.io/Forkify/dist/index.html',
-        imgSrc: `${this.commonPath}/forkify_176x99.png`,
-        tags: ['ES6', 'MVC', 'Webpack', 'Babel', 'API', 'DOM', 'tutorial'],
-        hide: true
+        imgSrc: `${this.commonPath}/forkify_348x196.png`,
+        tags: ['ES6', 'MVC', 'Webpack', 'Babel', 'API', 'DOM', 'tutorial']
       },
       {
         title: 'Budgety',
         href: 'https://vespaill.github.io/Budgety/',
-        imgSrc: `${this.commonPath}/budgety_176x99.png`,
-        tags: ['ES5', 'jQuery', 'DOM', 'tutorial'],
-        hide: true
+        imgSrc: `${this.commonPath}/budgety_348x196.png`,
+        tags: ['ES5', 'jQuery', 'DOM', 'tutorial']
       },
       {
         title: 'Pig Dice',
         href: 'https://vespaill.github.io/pig-dice-game/index.html',
-        imgSrc: `${this.commonPath}/pig-dice_176x99.png`,
-        tags: ['ES5', 'jQuery', 'DOM', 'tutorial'],
-        hide: true
+        imgSrc: `${this.commonPath}/pig-dice_348x196.png`,
+        tags: ['ES5', 'jQuery', 'DOM', 'tutorial']
       }
     ]
-  };
-
-  toggleHidden = title => {
-    console.log('TOGGLEHIDDEN');
-    const projects = [...this.state.projects];
-    const index = projects.findIndex(value => value.title === title);
-    projects[index].hide = !projects[index].hide;
-    this.setState({ projects });
   };
 
   render() {
@@ -87,16 +76,13 @@ class ProjectList extends Component {
       <>
         <Row className="mt-5">
           <Col md="12" className="text-center">
-            <h2 className="bold paragraphFirstLetter underline mb-4">Projects</h2>
+            <h2 className="bold paragraphFirstLetter underline mb-4">
+              Projects
+            </h2>
           </Col>
           {this.state.projects.map((project, index) => (
             <Col key={index} md="4" className="mb-4">
-              <ProjectCard
-                key={index}
-                item={project}
-                onExpand={this.toggleHidden}
-                onCollapse={this.toggleHidden}
-              />
+              <ProjectCard key={index} item={project} />
             </Col>
           ))}
         </Row>
