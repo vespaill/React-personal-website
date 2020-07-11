@@ -25,7 +25,7 @@ const AboutMe = () => {
             passionate about full stack web developement and{' '}
             {/* <Link className="link" to="/training"> */}
               strength training
-            {/* </Link>. */}
+            {/* </Link>. */}.
           </p>
         </article>
       </Col>
