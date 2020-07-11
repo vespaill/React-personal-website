@@ -7,15 +7,21 @@ const InfoCard = props => {
     <>
       <Image
         fluid
-        className="shadow-lg rounded-xl"
+        className="shadow-xl rounded-xl image animate-zoom-in-and-lift"
         src={`${process.env.PUBLIC_URL}${image.path}`}
         alt={image.title}
       />
-      <div className="mx-0 p-0 bg-bone">
-        <a className="no-wrap tiny link" href={`mailto:${email}`}>
-          {email}
+      <div className="bg-bone text-center mt-2">
+        <a className="tiny link" href={`mailto:${email}`}>
+          <div className="popup-box animate-zoom-in-and-lift d-inline-block">
+            {email}
+          </div>
         </a>
-        <p className="tiny">{phone}</p>
+        <a className="tiny link" href={`tel:${phone}`}>
+          <div className="popup-box animate-zoom-in-and-lift d-inline-block">
+            {phone}
+          </div>
+        </a>
       </div>
     </>
   );

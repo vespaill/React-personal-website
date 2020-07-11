@@ -7,43 +7,49 @@ class ProjectCard extends Component {
     open: false
   };
 
+  styles = {
+    overflow: 'hidden',
+    borderRadius: '24px'
+  };
+
   toggleOpen = () => {
     this.setState({ open: !this.state.open });
   };
 
   render() {
-    const { item } = this.props;
+    const { data } = this.props;
     return (
       <ConditionalWrapper
-        condition={item.href}
+        condition={data.href}
         wrapper={children => (
           <a
             className="no-decoration"
             target="_blank"
             rel="noopener noreferrer"
-            href={item.href}
+            href={data.href}
           >
             {children}
           </a>
         )}
       >
         <Card
+          style={this.styles}
           onMouseEnter={() => this.toggleOpen()}
           onMouseLeave={() => this.toggleOpen()}
           aria-expanded={this.state.open}
         >
-          <Card.Img variant="top" src={item.imgSrc} />
+          <Card.Img variant="top" src={data.imgSrc} />
           <Card.Body className="bg-nero">
             <p
               className={`text-center ${
                 this.state.open ? 'active-link' : 'inactive-link'
               }`}
             >
-              {item.title}
+              {data.title}
             </p>
             <Collapse in={this.state.open}>
               <Card.Text className="text-center">
-                {item.tags.map((tag, index, { length }) => (
+                {data.tags.map((tag, index, { length }) => (
                   <React.Fragment key={index}>
                     <Badge variant="warning">{tag}</Badge>
                     {index !== length - 1 && <>&nbsp;</>}

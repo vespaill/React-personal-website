@@ -82,7 +82,7 @@ class ProjectList extends Component {
           </Col>
           {this.state.projects.map((project, index) => (
             <Col key={index} md="4" className="mb-4">
-              <ProjectCard key={index} item={project} />
+              <ProjectCard key={index} data={project} />
             </Col>
           ))}
         </Row>
