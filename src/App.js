@@ -14,9 +14,9 @@ function App() {
       <NavBar />
       <main className="container">
         <Switch>
-          <Route path="/aboutme" component={AboutMe}></Route>
-          <Route path="/projects" component={ProjectList}></Route>
-          <Route path="/training" component={Training}></Route>
+          <Route path="/aboutme" component={AboutMe} />
+          <Route path="/projects" component={ProjectList} />
+          <Route path="/training" component={Training} />
           <Route path="/not-found" component={NotFound} />
           <Redirect from="/" exact to="/aboutme" />
           <Redirect to="/not-found" />
