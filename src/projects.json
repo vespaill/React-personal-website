@@ -1,5 +1,11 @@
 [
   {
+    "title": "RackMath",
+    "href": "https://vespaill.github.io/RackMath/",
+    "imgSrc": "./images/covers/projects/rackmath_348x196.png",
+    "tags": ["React","React Bootstrap", "ES6", "Mobile"]
+  },
+  {
     "title": "QuickFit",
     "href": "https://quickfit.herokuapp.com/",
     "imgSrc": "./images/covers/projects/quickfit_348x196.png",
