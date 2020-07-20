@@ -1,11 +1,23 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import ProjectCard from './cards/projectCard';
+import axios from 'axios';
 
 class ProjectList extends Component {
   state = {
-    projects: require('../projects.json')
+    projects: []
   };
+
+  async componentDidMount() {
+    const { data: projects } = await axios.get(
+      'https://portfolio-api-01251996.herokuapp.com/api/projects'
+    );
+    projects.map(project => {
+      project.imgData = new Buffer(project.data.data).toString('base64');
+      delete project.data;
+    });
+    this.setState({ projects });
+  }
 
   render() {
     return (

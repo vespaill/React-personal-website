@@ -38,7 +38,7 @@ class ProjectCard extends Component {
           onMouseLeave={() => this.toggleOpen()}
           aria-expanded={this.state.open}
         >
-          <Card.Img variant="top" src={data.imgSrc} />
+          <Card.Img variant="top" src={`data:image/png;base64,${data.imgData}`} />
           <Card.Body className="bg-nero">
             <p
               className={`text-center ${
