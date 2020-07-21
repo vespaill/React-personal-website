@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import ProjectCard from './cards/projectCard';
+import Loader from './common/loader';
 import axios from 'axios';
 
 class ProjectList extends Component {
   state = {
+    loading: false,
     projects: []
   };
 
   async componentDidMount() {
+    setTimeout(() => null, 1000);
     const { data: projects } = await axios.get(
       'https://portfolio-api-01251996.herokuapp.com/api/projects'
     );
@@ -16,10 +19,11 @@ class ProjectList extends Component {
       project.imgData = new Buffer(project.data.data).toString('base64');
       delete project.data;
     });
-    this.setState({ projects });
+    this.setState({ loading: true, projects });
   }
 
   render() {
+    const { loading, projects } = this.state;
     return (
       <>
         <Row className="mt-5">
@@ -28,13 +32,15 @@ class ProjectList extends Component {
               Projects
             </h2>
           </Col>
-          {this.state.projects.map((project, index) => {
-            return (
-              <Col key={index} md="4" className="mb-4">
-                <ProjectCard key={index} data={project} />
-              </Col>
-            );
-          })}
+          {!loading && <Loader />}
+          {loading &&
+            projects.map((project, index) => {
+              return (
+                <Col key={index} md="4" className="mb-4">
+                  <ProjectCard key={index} data={project} />
+                </Col>
+              );
+            })}
         </Row>
       </>
     );
