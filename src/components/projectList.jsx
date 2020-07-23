@@ -11,14 +11,22 @@ class ProjectList extends Component {
   };
 
   async componentDidMount() {
-    setTimeout(() => null, 1000);
-    const { data: projects } = await axios.get(
+    const { data } = await axios.get(
       'https://portfolio-api-01251996.herokuapp.com/api/projects'
     );
-    projects.map(project => {
-      project.imgData = new Buffer(project.data.data).toString('base64');
-      delete project.data;
-    });
+
+    let projects = data
+      .map(project => {
+        let cpy = { ...project };
+        cpy.imgData = new Buffer(project.data.data).toString('base64');
+        cpy.created = new Date(project.created);
+        delete cpy.data;
+        return cpy;
+      })
+      .sort((a, b) => {
+        return b.created - a.created;
+      });
+
     this.setState({ loading: true, projects });
   }
 
