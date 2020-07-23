@@ -7,11 +7,6 @@ class ProjectCard extends Component {
     open: false
   };
 
-  styles = {
-    overflow: 'hidden',
-    borderRadius: '24px'
-  };
-
   toggleOpen = () => {
     this.setState({ open: !this.state.open });
   };
@@ -33,12 +28,20 @@ class ProjectCard extends Component {
         )}
       >
         <Card
-          style={this.styles}
+          style={{
+            overflow: 'hidden',
+            borderRadius: '24px'
+          }}
           onMouseEnter={() => this.toggleOpen()}
+          onTouchStart={() => this.toggleOpen()}
           onMouseLeave={() => this.toggleOpen()}
+          onTouchEnd={() => this.toggleOpen()}
           aria-expanded={this.state.open}
         >
-          <Card.Img variant="top" src={`data:image/png;base64,${data.imgData}`} />
+          <Card.Img
+            variant="top"
+            src={`data:image/png;base64,${data.imgData}`}
+          />
           <Card.Body className="bg-nero">
             <p
               className={`text-center ${
