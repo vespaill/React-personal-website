@@ -7,7 +7,7 @@ const AboutMe = () => {
   const cardInfo = {
     image: {
       title: 'me',
-      path: '/images/me/me-portrait.jpg'
+      path: './me-portrait.jpg'
     },
     email: 'victor_espaillat@student.uml.edu',
     phone: '978-566-8344'
