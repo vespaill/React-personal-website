@@ -35,7 +35,7 @@ class ProjectList extends Component {
   }
 
   render() {
-    const { loading, projects, tutProjs } = this.state;
+    const { projsLoading, tutsLoading, projects, tutProjs } = this.state;
 
     const projsJSX = projects.map((project, index) => (
       <Col key={index} md="4" className="mb-4">
@@ -55,15 +55,15 @@ class ProjectList extends Component {
           <Col md="12" className="text-center">
             <h2 className="bold paragraphFirstLetter underline mb-4">Projects</h2>
           </Col>
-          {loading && <Loader />}
-          {!loading && projsJSX}
+          {projsLoading && <Loader />}
+          {!projsLoading && projsJSX}
         </Row>
         <Row className="mt-5">
           <Col md="12" className="text-center">
             <h2 className="bold paragraphFirstLetter underline mb-4">Completed Tutorials</h2>
           </Col>
-          {loading && <Loader />}
-          {!loading && tutProjsJSX}
+          {tutsLoading && <Loader />}
+          {!tutsLoading && tutProjsJSX}
         </Row>
       </>
     );
