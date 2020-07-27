@@ -5,18 +5,10 @@ import Loader from './common/loader';
 import axios from 'axios';
 
 class ProjectList extends Component {
-  state = {
-    loading: false,
-    projects: [],
-    tutorialProjs: []
-  };
+  state = { projsLoading: true, tutsLoading: true, projects: [], tutProjs: [] };
 
-  async componentDidMount() {
-    const { data } = await axios.get(
-      'https://portfolio-api-01251996.herokuapp.com/api/projects'
-    );
-
-    let allProjs = data
+  parseProjData = projects => {
+    return projects
       .map(project => {
         let cpy = { ...project };
         cpy.imgData = new Buffer(project.data.data).toString('base64');
@@ -27,15 +19,23 @@ class ProjectList extends Component {
       .sort((a, b) => {
         return b.created - a.created;
       });
+  };
 
-    const projects = allProjs.filter(project => !project.tutorial);
-    const tutorialProjs = allProjs.filter(project => project.tutorial);
-    console.log(projects);
-    this.setState({ loading: true, projects, tutorialProjs });
+  async componentDidMount() {
+    const baseURL = 'https://portfolio-api-01251996.herokuapp.com/api';
+    // const baseURL = 'http://localhost:3001/api';
+
+    const { data: projData } = await axios.get(`${baseURL}/projects`);
+    const projects = this.parseProjData(projData);
+    this.setState({ projsLoading: false, projects });
+
+    const { data: tutProjData } = await axios.get(`${baseURL}/tutorials`);
+    const tutProjs = this.parseProjData(tutProjData);
+    this.setState({ tutsLoading: false, tutProjs });
   }
 
   render() {
-    const { loading, projects, tutorialProjs } = this.state;
+    const { loading, projects, tutProjs } = this.state;
 
     const projsJSX = projects.map((project, index) => (
       <Col key={index} md="4" className="mb-4">
@@ -43,7 +43,7 @@ class ProjectList extends Component {
       </Col>
     ));
 
-    const tutorialProjcsJSX = tutorialProjs.map((project, index) => (
+    const tutProjsJSX = tutProjs.map((project, index) => (
       <Col key={index} md="3" className="mb-4">
         <ProjectCard key={index} data={project} />
       </Col>
@@ -53,21 +53,17 @@ class ProjectList extends Component {
       <>
         <Row className="mt-5">
           <Col md="12" className="text-center">
-            <h2 className="bold paragraphFirstLetter underline mb-4">
-              Projects
-            </h2>
+            <h2 className="bold paragraphFirstLetter underline mb-4">Projects</h2>
           </Col>
-          {!loading && <Loader />}
-          {loading && projsJSX}
+          {loading && <Loader />}
+          {!loading && projsJSX}
         </Row>
         <Row className="mt-5">
           <Col md="12" className="text-center">
-            <h2 className="bold paragraphFirstLetter underline mb-4">
-              Lessons
-            </h2>
+            <h2 className="bold paragraphFirstLetter underline mb-4">Completed Tutorials</h2>
           </Col>
-          {!loading && <Loader />}
-          {loading && tutorialProjcsJSX}
+          {loading && <Loader />}
+          {!loading && tutProjsJSX}
         </Row>
       </>
     );
