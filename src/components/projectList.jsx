@@ -39,13 +39,13 @@ class ProjectList extends Component {
 
     const projsJSX = projects.map((project, index) => (
       <Col key={index} md="4" className="mb-4">
-        <ProjectCard key={index} data={project} />
+        <ProjectCard key={index} {...project} />
       </Col>
     ));
 
     const tutProjsJSX = tutProjs.map((project, index) => (
       <Col key={index} md="3" className="mb-4">
-        <ProjectCard key={index} data={project} />
+        <ProjectCard key={index} {...project} />
       </Col>
     ));
 

@@ -3,26 +3,20 @@ import { Card, Badge, Collapse } from 'react-bootstrap';
 import ConditionalWrapper from './../common/conditionalWrapper';
 
 class ProjectCard extends Component {
-  state = {
-    open: false
-  };
+  state = { open: false };
 
-  toggleOpen = () => {
-    this.setState({ open: !this.state.open });
-  };
+  open = () => { this.setState({ open: true }); };
+  close = () => { this.setState({ open: false }); };
 
   render() {
-    const { data } = this.props;
+    const { href, imgData, created, title, tags } = this.props;
+    const { open } = this.state;
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
     return (
       <ConditionalWrapper
-        condition={data.href}
+        condition={href}
         wrapper={children => (
-          <a
-            className="no-decoration"
-            target="_blank"
-            rel="noopener noreferrer"
-            href={data.href}
-          >
+          <a className="no-decoration" target="_blank" rel="noopener noreferrer" href={href}>
             {children}
           </a>
         )}
@@ -32,27 +26,30 @@ class ProjectCard extends Component {
             overflow: 'hidden',
             borderRadius: '24px'
           }}
-          onMouseEnter={() => this.toggleOpen()}
-          onTouchStart={() => this.toggleOpen()}
-          onMouseLeave={() => this.toggleOpen()}
-          onTouchEnd={() => this.toggleOpen()}
-          aria-expanded={this.state.open}
+          onMouseEnter={() => this.open()}
+          onTouchStart={() => this.open()}
+          onMouseLeave={() => this.close()}
+          onTouchEnd={() => this.close()}
+          aria-expanded={open}
         >
-          <Card.Img
-            variant="top"
-            src={`data:image/png;base64,${data.imgData}`}
-          />
+          <Card.Img variant="top" src={`data:image/png;base64,${imgData}`} />
+          <div
+            className="badge badge-warning"
+            style={{
+              position: 'absolute',
+              top: '5px',
+              right: `${open? '10px' : '-200px'}`,
+              transition: 'all .35s',
+              borderRadius: '50px'
+            }}
+          >
+            {`${monthNames[created.getMonth()]} ${created.getFullYear()}`}
+          </div>
           <Card.Body className="bg-nero">
-            <p
-              className={`text-center ${
-                this.state.open ? 'active-link' : 'inactive-link'
-              }`}
-            >
-              {data.title}
-            </p>
-            <Collapse in={this.state.open}>
+            <p className={`text-center ${open ? 'active-link' : 'inactive-link'}`}>{title}</p>
+            <Collapse in={open}>
               <Card.Text className="text-center">
-                {data.tags.map((tag, index, { length }) => (
+                {tags.map((tag, index, { length }) => (
                   <React.Fragment key={index}>
                     <Badge variant="warning">{tag}</Badge>
                     {index !== length - 1 && <>&nbsp;</>}
