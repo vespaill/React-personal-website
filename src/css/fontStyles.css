@@ -1,13 +1,12 @@
 ﻿/*******************************************************************************
-**    File: font_styles.css                                                   **
+**    File: fontStyles.css                                                   **
 **                                                                            **
 **    Importing some elegant LaTeX fonts                                      **
 *******************************************************************************/
 @font-face {
   font-family: 'CMU Typewriter Italic';
   src: url('../fonts/CMUTypewriter-Italic.eot');
-  src: url('../fonts/CMUTypewriter-Italic.eot?#iefix')
-      format('embedded-opentype'),
+  src: url('../fonts/CMUTypewriter-Italic.eot?#iefix') format('embedded-opentype'),
     url('../fonts/CMUTypewriter-Italic.woff2') format('woff2'),
     url('../fonts/CMUTypewriter-Italic.woff') format('woff'),
     url('../fonts/CMUTypewriter-Italic.ttf') format('truetype'),
@@ -19,13 +18,11 @@
 @font-face {
   font-family: 'CMU Typewriter Regular';
   src: url('../fonts/CMUTypewriter-Regular.eot');
-  src: url('../fonts/CMUTypewriter-Regular.eot?#iefix')
-      format('embedded-opentype'),
+  src: url('../fonts/CMUTypewriter-Regular.eot?#iefix') format('embedded-opentype'),
     url('../fonts/CMUTypewriter-Regular.woff2') format('woff2'),
     url('../fonts/CMUTypewriter-Regular.woff') format('woff'),
     url('../fonts/CMUTypewriter-Regular.ttf') format('truetype'),
-    url('../fonts/CMUTypewriter-Regular.svg#CMUTypewriter-Regular')
-      format('svg');
+    url('../fonts/CMUTypewriter-Regular.svg#CMUTypewriter-Regular') format('svg');
   font-weight: 500;
   font-style: normal;
 }
@@ -45,13 +42,11 @@
 @font-face {
   font-family: 'CMU Serif Upright';
   src: url('../fonts/CMUSerif-UprightItalic.eot');
-  src: url('../fonts/CMUSerif-UprightItalic.eot?#iefix')
-      format('embedded-opentype'),
+  src: url('../fonts/CMUSerif-UprightItalic.eot?#iefix') format('embedded-opentype'),
     url('../fonts/CMUSerif-UprightItalic.woff2') format('woff2'),
     url('../fonts/CMUSerif-UprightItalic.woff') format('woff'),
     url('../fonts/CMUSerif-UprightItalic.ttf') format('truetype'),
-    url('../fonts/CMUSerif-UprightItalic.svg#CMUSerif-UprightItalic')
-      format('svg');
+    url('../fonts/CMUSerif-UprightItalic.svg#CMUSerif-UprightItalic') format('svg');
   font-weight: 500;
   font-style: italic;
 }
@@ -83,8 +78,7 @@
 @font-face {
   font-family: 'NovaMono for Powerline';
   src: url('../fonts/NovaMonoForPowerline.eot');
-  src: url('../fonts/NovaMonoForPowerline.eot?#iefix')
-      format('embedded-opentype'),
+  src: url('../fonts/NovaMonoForPowerline.eot?#iefix') format('embedded-opentype'),
     url('../fonts/NovaMonoForPowerline.woff2') format('woff2'),
     url('../fonts/NovaMonoForPowerline.woff') format('woff'),
     url('../fonts/NovaMonoForPowerline.ttf') format('truetype'),

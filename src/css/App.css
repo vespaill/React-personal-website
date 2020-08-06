@@ -76,9 +76,7 @@
   font-size: 200%;
   font-family: 'Liberate Wide Normal';
 }
-.tiny {
-  font-size: 1rem;
-}
+
 .badge {
   font-family: 'CMU Typewriter Regular';
 }
@@ -128,10 +126,20 @@
   background-color: var(--nero);
 }
 
-.popup-box {
-  background-color: var(--bone);
-  border-radius: 100px;
-  padding: 5px 15px;
+.shadow-xl { box-shadow: 0 2px 10px black; }
+
+@keyframes wiggle {
+  33% {
+    transform: rotate(-24deg);
+  }
+  66% {
+    transform: rotate(24deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
-.shadow-xl { box-shadow: 0 2px 10px black; }
+.animate-wiggle {
+  animation: wiggle 0.5s;
+}
