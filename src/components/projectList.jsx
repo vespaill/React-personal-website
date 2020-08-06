@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'react-bootstrap';
-import ProjectCard from './cards/projectCard';
+import ProjectCard from './projectCard';
 import Loader from './common/loader';
 import axios from 'axios';
 
@@ -55,15 +55,13 @@ class ProjectList extends Component {
           <Col md="12" className="text-center">
             <h2 className="bold paragraphFirstLetter underline mb-4">Projects</h2>
           </Col>
-          {projsLoading && <Loader />}
-          {!projsLoading && projsJSX}
+          {projsLoading ? <Loader /> : projsJSX}
         </Row>
         <Row className="mt-5">
           <Col md="12" className="text-center">
             <h2 className="bold paragraphFirstLetter underline mb-4">Completed Tutorials</h2>
           </Col>
-          {tutsLoading && <Loader />}
-          {!tutsLoading && tutProjsJSX}
+          {tutsLoading ? <Loader /> : tutProjsJSX}
         </Row>
       </>
     );

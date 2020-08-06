@@ -1,18 +1,7 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
-import InfoCard from './cards/infoCard';
-// import { Link } from 'react-router-dom';
+import { Row, Col, Image } from 'react-bootstrap';
 
 const AboutMe = () => {
-  const cardInfo = {
-    image: {
-      title: 'me',
-      path: './me-portrait.jpg'
-    },
-    email: 'victor_espaillat@student.uml.edu',
-    phone: '978-566-8344'
-  };
-
   return (
     <Row className="mb-5">
       <Col md="8">
@@ -21,7 +10,7 @@ const AboutMe = () => {
             Who I Am
           </h2>
           <p className="bold paragraphFirstLetter">
-            I am a computer science graduate from UMass Lowell and I am
+            I am a computer science graduate from UMass Lowell. I am
             passionate about full stack web developement and{' '}
             {/* <Link className="link" to="/training"> */}
               strength training
@@ -30,7 +19,12 @@ const AboutMe = () => {
         </article>
       </Col>
       <Col md="4">
-        <InfoCard {...cardInfo} />
+        <Image
+          fluid
+          className="shadow-xl rounded-xl image animate-zoom-in-and-lift"
+          src={`${process.env.PUBLIC_URL}/me-portrait.jpg`}
+          alt="victor portrait"
+        />
       </Col>
     </Row>
   );

@@ -5,7 +5,8 @@ import AboutMe from './components/aboutMe';
 import ProjectList from './components/projectList';
 import Training from './components/training';
 import NotFound from './components/common/notFound';
-import './css/font_styles.css';
+import Footer from './components/footer';
+import './css/fontStyles.css';
 import './css/App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Redirect to="/not-found" />
         </Switch>
       </main>
+      <Footer />
     </>
   );
 }

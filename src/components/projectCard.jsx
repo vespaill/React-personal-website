@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Badge, Collapse } from 'react-bootstrap';
-import ConditionalWrapper from './../common/conditionalWrapper';
+import ConditionalWrapper from './common/conditionalWrapper';
 
 class ProjectCard extends Component {
   state = { open: false };
