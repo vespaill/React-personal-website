@@ -11,10 +11,10 @@ const Footer = () => {
 
   return (
     <footer>
-      <Container className="contact">
-        <Row className>
+      <Container className="mx-auto">
+        <Row>
           <Col md={12}>
-            <div className="contact text-center">
+            <div className="contact">
               <a href="tel:978-566-8344"><svg {...svgProps} width="32px" height="32px" viewBox="0 0 16 16" className="bi bi-telephone-fill" fill="white" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M2.267.98a1.636 1.636 0 0 1 2.448.152l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z"/></svg></a>
               <a href="mailto:victor_espaillat@student.uml.edu"><svg {...svgProps} height="32px" viewBox="0 0 16 16" className="bi bi-envelope-fill" fill="white" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" /></svg></a>
               <a href="https://www.linkedin.com/in/victorespaillat/" target="_blank" rel="noopener noreferrer" className="li-ic"><svg {...svgProps} xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
@@ -22,7 +22,7 @@ const Footer = () => {
             </div>
           </Col>
         </Row>
-        <div className="text-center mt-5"><small>&copy; Copyright Victor Espaillat 2020</small></div>
+        <div className="text-center copyright"><small>&copy; Copyright Victor Espaillat 2020</small></div>
       </Container>
     </footer>
   );
