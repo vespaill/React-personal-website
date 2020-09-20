@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 import { Row, Col, Image } from 'react-bootstrap';
 
 const AboutMe = () => {
@@ -6,15 +7,10 @@ const AboutMe = () => {
     <Row className="mb-5">
       <Col md="8">
         <article>
-          <h2 className="custom-h2 paragraphFirstLetter underline mb-4">
-            Who I Am
-          </h2>
+          <h2 className="custom-h2 paragraphFirstLetter underline mb-4">Who I Am</h2>
           <p className="bold paragraphFirstLetter">
-            I am a computer science graduate from UMass Lowell. I am
-            passionate about full stack web developement and{' '}
-            {/* <Link className="link" to="/training"> */}
-              strength training
-            {/* </Link>. */}.
+            I am a computer science graduate from UMass Lowell. I am passionate about{' '}
+            <Link className="link" to="/projects">full stack web developement</Link> and <Link className="link" to="/strength">strength training</Link>.
           </p>
         </article>
       </Col>

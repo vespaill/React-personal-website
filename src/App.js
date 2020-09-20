@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from './components/navBar';
 import AboutMe from './components/aboutMe';
 import ProjectList from './components/projectList';
-import Training from './components/training';
+import StrengthTraining from './components/strengthTraining';
 import NotFound from './components/common/notFound';
 import Footer from './components/footer';
 import './css/fontStyles.css';
@@ -17,7 +17,7 @@ function App() {
         <Switch>
           <Route path="/aboutme" component={AboutMe} />
           <Route path="/projects" component={ProjectList} />
-          <Route path="/training" component={Training} />
+          <Route path="/strength" component={StrengthTraining} />
           <Route path="/not-found" component={NotFound} />
           <Redirect from="/" exact to="/aboutme" />
           <Redirect to="/not-found" />

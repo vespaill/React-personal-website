@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 
-const Training = () => {
+const strengthTraining = () => {
   const videoKeys = [
     'WLQm3POfwlk',
     '0WXyi7fyfRk',
@@ -34,4 +34,4 @@ const Training = () => {
   );
 };
 
-export default Training;
+export default strengthTraining;
